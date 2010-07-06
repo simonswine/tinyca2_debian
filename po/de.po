@@ -1245,7 +1245,7 @@ msgid "if the corresponding certificate is still valid"
 msgstr "falls das Zertifikat noch gültig ist"
 
 #: ../lib/GUI.pm:2636
-msgid "The Certificate will be longer valid than your CA!"
+msgid "The certificate will be valid longer than its CA!"
 msgstr "Das Zertifikat wird länger gültig sein als die CA!"
 
 #: ../lib/GUI.pm:2638

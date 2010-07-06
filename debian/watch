@@ -1,0 +1,3 @@
+version=2
+http://tinyca.sm-zone.net/tinyca2-(.*)\.tar\.gz        debian uupdate
+

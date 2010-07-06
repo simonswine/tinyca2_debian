@@ -1,0 +1,9 @@
+locale/cs/LC_MESSAGES/tinyca2.mo usr/share/locale/cs/LC_MESSAGES/
+locale/de/LC_MESSAGES/tinyca2.mo usr/share/locale/de/LC_MESSAGES/
+locale/es/LC_MESSAGES/tinyca2.mo usr/share/locale/es/LC_MESSAGES/
+locale/fr/LC_MESSAGES/tinyca2.mo usr/share/locale/fr/LC_MESSAGES/
+locale/sv/LC_MESSAGES/tinyca2.mo usr/share/locale/sv/LC_MESSAGES/
+templates/openssl.cnf  etc/tinyca/
+lib/*.pm usr/share/tinyca
+lib/GUI/*.pm usr/share/tinyca/GUI
+tinyca2 usr/bin/

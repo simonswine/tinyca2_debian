@@ -1,0 +1,11 @@
+tinyca (0.7.0-1) unstable; urgency=low
+
+  * TinyCA has been rewritten to use perl-gkt2.  Due to this change the
+    author of tinyca has renamed the executable to "tinyca2".  In order to
+    avoid unnecessary clutter, I will stay with the new name and not
+    introduce a compatibility symlink.
+  
+    From now on, please invoke tinyca as tinyca2.
+
+ -- Christoph Ulrich Scholler <scholler@fnb.tu-darmstadt.de>  Fri, 12 Aug 2005 14:26:45 +0200
+

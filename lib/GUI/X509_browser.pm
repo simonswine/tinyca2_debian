@@ -624,7 +624,7 @@ sub selection_cadir {
 
   $dir = $self->{'actdir'};
   # cut off the last directory name to provide the ca-directory
-  $dir =~ s/\/certs|\/req|\/keys$//;
+  $dir =~ s/(\/certs|\/req|\/keys)$//;
   return($dir);
 }
 

@@ -1249,7 +1249,7 @@ sub show_req_dialog {
    # table for request data
    my $cc=0;
    my $ous = 1;
-   if(defined($opts->{'OU'})) {
+   if(defined($opts->{'OU'}) and defined @{$opts->{'OU'}}) {
       $ous = @{$opts->{'OU'}} - 1;
    }
    $reqtable = Gtk2::Table->new(1, 13 + $ous, 0);
@@ -1297,7 +1297,7 @@ sub show_req_dialog {
          _("Organization Name (eg. company):"),
          \$opts->{'O'}, $reqtable, 10, 1);
 
-   if(defined($opts->{'OU'})) {
+   if(defined($opts->{'OU'}) and defined @{$opts->{'OU'}}) {
       foreach my $ou (@{$opts->{'OU'}}) {
          $entry = GUI::HELPERS::entry_to_table(
                _("Organizational Unit Name (eg. section):"),
@@ -2521,7 +2521,7 @@ sub about {
    my ($aboutdialog, $href, $label);
 
    $aboutdialog = Gtk2::AboutDialog->new();
-   $aboutdialog->set_name("TinyCA2");
+   $aboutdialog->set_program_name("TinyCA2");
    $aboutdialog->set_version($main->{'version'});
    $aboutdialog->set_copyright("2002-2006 Stephan Martin");
    $aboutdialog->set_license("GNU Public License (GPL)");
@@ -2534,6 +2534,8 @@ sub about {
          _("French: Thibault Le Meur <Thibault.Lemeur\@supelec.fr>"));
 
    $aboutdialog->show_all();
+   $aboutdialog->run;
+   $aboutdialog->destroy;
 
    return;
 }
@@ -2634,7 +2636,7 @@ sub show_req_date_warning {
 
    my ($box, $button_ok, $button_cancel, $t);
 
-   $t = _("The Certificate will be longer valid than your CA!");
+   $t = _("The certificate will be valid longer than its CA!");
    $t .= "\n";
    $t .= _("This may cause problems with some software!!");
 

@@ -1,0 +1,225 @@
+tinyca (0.7.5-3) unstable; urgency=low
+
+  * Fixed deprecation warning in About dialog (Closes: #519164).  Thanks
+    to Guillaume Delacour for the patch
+  * Applied Swedish translation update (Closes: #551652).  Thanks to
+    Marcus Better for the patch.
+  * Improved English style in message shown when the certificate is valid
+    longer than its CA (Closes: #499017).  Thanks to Pete Boyd for the
+    suggestion.
+  * Fixed a problem causing errors with some usernames (e.g. certsign)
+    (Closes: #561335).
+  * The tinyca basedir ($HOME/.TinyCA) and default export directory can
+    now optionally be configured through environment variables
+    (TINYCA_BASEDIR, TINYCA_EXPORTDIR) (Closes: #454380).  Thanks to Alex
+    Samad for the patch.
+
+  * Packaging cleanup:
+    - Fixed typo in control file by moving the URL of the upstream homepage
+      into the Homepage control file field (Closes: #485576).
+    - Fixed lintian warnings:
+      - debhelper-but-no-misc-depends
+      - package-uses-deprecated-debhelper-compat-version
+      - ancient-standards-version
+      - menu-item-uses-apps-section
+      - menu-item-creates-new-section
+      - debian-rules-sets-DH_COMPAT
+      - dh-clean-k-is-deprecated
+    - Bumped Standards-Version to 3.8.3.
+  * Switched to git for package version control.
+
+ -- Christoph Ulrich Scholler <scholler@fnb.tu-darmstadt.de>  Wed, 07 Jul 2010 00:16:44 +0200
+
+tinyca (0.7.5-2) unstable; urgency=low
+
+  * Move perl modules from /usr/lib/tinyca to /usr/share/tinyca.
+
+ -- Christoph Ulrich Scholler <scholler@fnb.tu-darmstadt.de>  Wed, 25 Oct 2006 23:39:37 +0200
+
+tinyca (0.7.5-1) unstable; urgency=low
+
+  * New upstream release
+  * Improved package description.
+
+ -- Christoph Ulrich Scholler <scholler@fnb.tu-darmstadt.de>  Sat, 12 Aug 2006 19:01:50 +0200
+
+tinyca (0.7.4-1) unstable; urgency=low
+
+  * New upstream release (Closes: #367829)
+
+ -- Christoph Ulrich Scholler <scholler@fnb.tu-darmstadt.de>  Wed, 19 Jul 2006 22:51:44 +0200
+
+tinyca (0.7.3-2) unstable; urgency=low
+
+  * Apply upstream patch which fixes a crash when CA is created with
+    nsCertType (Closes: #354386).
+  * Fix failure to start if the composite extension in X.org is enabled
+    (patch pulled from upstream CVS).
+  * debhelper is required for the clean target and must therefore be listed
+    in Build-Depends.
+  * Bumped Standards-Version to 3.7.2.
+
+ -- Christoph Ulrich Scholler <scholler@fnb.tu-darmstadt.de>  Sat,  4 Jun 2006 11:19:25 +0200
+
+tinyca (0.7.3-1) unstable; urgency=low
+
+  * New upstream release (Closes: #364617)
+
+ -- Christoph Ulrich Scholler <scholler@fnb.tu-darmstadt.de>  Sun, 28 May 2006 16:58:22 +0200
+
+tinyca (0.7.2-3) unstable; urgency=low
+
+  * No changes.  Bumping version number so that dak accepts the upload.
+
+ -- Christoph Ulrich Scholler <scholler@fnb.tu-darmstadt.de>  Sat, 13 May 2006 18:59:46 -0500
+
+tinyca (0.7.2-2) unstable; urgency=medium
+
+  * Fixed openssl version checks again (Closes: #360555, #360766).  Thanks
+    to Peter Marschall for the patch.
+  * Fixed broken quit behavior (Closes: #360767).  Thanks to Peter
+    Marschall for the patch.
+  * Fixed "undef" warnings due to undefined MD5 fingerprints (Closes: #360768).
+    Thanks to Peter Marschall for the patch.
+
+ -- Christoph Ulrich Scholler <scholler@fnb.tu-darmstadt.de>  Fri, 12 May 2006 18:14:03 -0500
+
+tinyca (0.7.2-1) unstable; urgency=medium
+
+  * New upstream release (Closes: #342353, #331162).
+  * Added Swedish PO translation, thanks to Daniel Nylander
+    (Closes: #349639).
+  * Urgency medium because this release fixes annoying bugs.
+  * Use the provided desktop file.
+  * Update manpage to reflect the fact that the executable has been renamed to
+    tinyca2.
+
+ -- Christoph Ulrich Scholler <scholler@fnb.tu-darmstadt.de>  Tue, 28 Feb 2006 21:28:21 +0100
+
+tinyca (0.7.1-1) unstable; urgency=low
+
+  * New upstream release
+    - Adds additional export options (Closes: #293931).
+    - Correctly imports serial numbers from index.txt (Closes: #330729).
+  * Removed libgnome2-perl from the list of dependencies (Closes: #332690).
+  * Never uploaded.
+
+ -- Christoph Ulrich Scholler <scholler@fnb.tu-darmstadt.de>  Sat, 22 Oct 2005 19:14:33 +0200
+
+tinyca (0.7.0-2) unstable; urgency=high
+
+  * tinyca: crashes on startup, thanks to Jasper Spaans for the patch
+    (Closes: #323124).
+
+ -- Christoph Ulrich Scholler <scholler@fnb.tu-darmstadt.de>  Fri, 26 Aug 2005 17:02:11 +0200
+
+tinyca (0.7.0-1) unstable; urgency=high
+
+  * New upstream release.
+  * From this version on, tinyca is based on Perl/Gtk2.
+  * Urgency high (fixes grave bug): "endless loop on startup",
+    (Closes: #308879).
+  * Fixed spelling in menu file, thanks to Daniel Baumann
+    (Closes: #320614).
+  * Bug fix: "tinyca: [INTL:de] German PO file corrections", thanks to
+    Jens Seidel (Closes: #313847).
+  * Bumped Standards-Version to 3.6.2.
+
+ -- Christoph Ulrich Scholler <scholler@fnb.tu-darmstadt.de>  Fri, 12 Aug 2005 00:42:27 +0200
+
+tinyca (0.6.8-1) unstable; urgency=low
+
+  * New upstream release (Closes: #271183)
+  * Bug fix: "wrong path for locales in perlscript *tinyca", thanks to
+    Daniel J. Priem for the patch (Closes: #295950).
+
+ -- Christoph Ulrich Scholler <scholler@fnb.tu-darmstadt.de>  Mon, 28 Mar 2005 16:44:18 +0200
+
+tinyca (0.6.7-1) unstable; urgency=low
+
+  * New upstream release
+  * Bug fix: "tinyca: Undefined $type variable causes Perl warnings",
+    patch by Matthew Grant, applied upstream (Closes: #282866).
+
+ -- Christoph Ulrich Scholler <scholler@fnb.tu-darmstadt.de>  Wed,  8 Dec 2004 23:27:52 +0100
+
+tinyca (0.6.6-3) unstable; urgency=low
+
+  * Bug fix: "tinyca: Build not idempotent, debian/rules does not delete
+    .mo locale binary files.", thanks to Matthew Grant (Closes: #282865).
+
+ -- Christoph Ulrich Scholler <scholler@fnb.tu-darmstadt.de>  Sat, 27 Nov 2004 15:07:55 +0100
+
+tinyca (0.6.6-2) unstable; urgency=low
+
+  * New (old) maintainer (Thanks Wesley for sponsoring).
+
+ -- Christoph Ulrich Scholler <scholler@fnb.tu-darmstadt.de>  Wed,  1 Sep 2004 12:04:17 +0200
+
+tinyca (0.6.6-1) unstable; urgency=low
+
+  * Now an official Debian package (closes: 268773)
+  * New upstream release
+  * New maintainer
+  * Changed Build-Depends to correctly be Build-Depends-Indep
+  * Updated rules to install Spanish and Czech translations.
+  * Make sure translations are built from source.
+  * Fixed lintian: copyright-should-refer-to-common-license-file-for-gpl
+  * Fixed lintian: unquoted-string-in-menu-item
+  * Fixed lintian: description-synopsis-might-not-be-phrased-properly
+
+ -- Wesley J. Landaker <wjl@icecavern.net>  Sat, 28 Aug 2004 19:55:58 -0600
+
+tinyca (0.6.4-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Christoph Ulrich Scholler <scholler@.fnb.tu-darmstadt.de>  Fri, 16 Jul 2004 16:18:22 +0200
+
+tinyca (0.6.1-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Christoph Ulrich Scholler <scholler@fnb.tu-darmstadt.de>  Wed,  2 Jun 2004 12:27:11 +0200
+
+tinyca (0.6.0-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Christoph Ulrich Scholler <scholler@fnb.tu-darmstadt.de>  Wed, 12 May 2004 12:26:19 +0200
+
+tinyca (0.5.4-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Christoph Ulrich Scholler <scholler@fnb.tu-darmstadt.de>  Mon, 27 Oct 2003 11:03:24 +0100
+
+tinyca (0.5.2-1) unstable; urgency=low
+
+  * New upstream release
+  * Fixed a bug where exporting a key in PEM or DER format without passphrase
+    would print a perl warning in KEY.pm:195.
+
+ -- Christoph Ulrich Scholler <scholler@fnb.tu-darmstadt.de>  Wed, 10 Sep 2003 17:04:50 +0200
+
+tinyca (0.5.1-2) unstable; urgency=low
+
+  * Fixed dependencies.
+  * Added a recommendation for zip.
+  * Updated package description.
+
+ -- Christoph Ulrich Scholler <scholler@fnb.tu-darmstadt.de>  Wed, 27 Aug 2003 16:06:35 +0200
+
+tinyca (0.5.1-1) unstable; urgency=low
+
+  * New upstream release
+  * The GUI in this release is written in perl-Gtk/Gnome.
+
+ -- Christoph Ulrich Scholler <scholler@fnb.tu-darmstadt.de>  Wed, 27 Aug 2003 15:00:31 +0200
+
+tinyca (0.4.9-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Christoph Ulrich Scholler <scholler@fnb.tu-darmstadt.de>  Wed,  9 Jul 2003 12:26:10 +0200
+

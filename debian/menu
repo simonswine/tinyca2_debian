@@ -1,0 +1,5 @@
+?package(tinyca):\
+  needs="X11"\
+  section="Applications/System/Security"\
+  title="TinyCA"\
+  command="/usr/bin/tinyca2"
