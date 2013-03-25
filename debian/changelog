@@ -1,3 +1,12 @@
+tinyca (0.7.5-4) unstable; urgency=medium
+
+  * Ensured compatibility with openssl 1.0.1 (Closes: #702233). Thanks to
+    Mateusz Kijowski for the bug report.
+  * Fixed deprecation warning form perl about use of qw() without
+    parentheses (Closes: 702433). Thanks to Jörgen Hägg for the patch.
+
+ -- Christoph Ulrich Scholler <scholler@fnb.tu-darmstadt.de>  Mon, 25 Mar 2013 02:25:09 +0100
+
 tinyca (0.7.5-3) unstable; urgency=low
 
   * Fixed deprecation warning in About dialog (Closes: #519164).  Thanks
