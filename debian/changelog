@@ -1,3 +1,18 @@
+tinyca (0.7.5-5) unstable; urgency=medium
+
+  * Bug fix: "options set with radio buttons when creating a new
+    certificate are mixed up", thanks to Mateusz Kijowski.
+    Closes: #724586
+  * Bug fix: "perl syntax warnings (OU != array)". Thanks to
+    Andrew Schulman for the patch. Closes: #380003, LP: #374241
+  * Packaging cleanup:
+    - Fixed lintian warnings:
+      - debian-rules-missing-recommended-target build-arch
+      - debian-rules-missing-recommended-target build-indep
+    - Bumped Standards-Version to 3.9.5.
+  
+ -- Christoph Ulrich Scholler <scholler@fnb.tu-darmstadt.de>  Mon, 24 Feb 2014 23:17:24 +0100
+
 tinyca (0.7.5-4) unstable; urgency=medium
 
   * Ensured compatibility with openssl 1.0.1 (Closes: #702233). Thanks to

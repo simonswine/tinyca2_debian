@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Christoph Ulrich Scholler <scholler@fnb.tu-darmstadt.de>
 Build-Depends-Indep: gettext
 Build-Depends: debhelper (>> 7.0.0)
-Standards-Version: 3.8.3
+Standards-Version: 3.9.5
 Homepage: http://tinyca.sm-zone.net/
 
 Package: tinyca

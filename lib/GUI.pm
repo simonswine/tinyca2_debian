@@ -1249,7 +1249,7 @@ sub show_req_dialog {
    # table for request data
    my $cc=0;
    my $ous = 1;
-   if(defined($opts->{'OU'}) and defined @{$opts->{'OU'}}) {
+   if(defined($opts->{'OU'}) and ref($opts->{'OU'}) eq 'ARRAY') {
       $ous = @{$opts->{'OU'}} - 1;
    }
    $reqtable = Gtk2::Table->new(1, 13 + $ous, 0);
@@ -1297,7 +1297,7 @@ sub show_req_dialog {
          _("Organization Name (eg. company):"),
          \$opts->{'O'}, $reqtable, 10, 1);
 
-   if(defined($opts->{'OU'}) and defined @{$opts->{'OU'}}) {
+   if(defined($opts->{'OU'}) and ref($opts->{'OU'}) eq 'ARRAY') {
       foreach my $ou (@{$opts->{'OU'}}) {
          $entry = GUI::HELPERS::entry_to_table(
                _("Organizational Unit Name (eg. section):"),
@@ -3096,9 +3096,9 @@ sub _fill_radiobox {
    for $value (keys %values) {
       my $display_name = $values{$value};
       my $key = Gtk2::RadioButton->new($previous_key, $display_name);
-      $key->set_active(1) if(defined($$var) && $$var eq $value);
       $key->signal_connect('toggled' =>
 			   sub{GUI::CALLBACK::toggle_to_var($key, $var, $value)});
+      $key->set_active(1) if(defined($$var) && $$var eq $value);
       $radiobox->add($key);
       $previous_key = $key;
    }
