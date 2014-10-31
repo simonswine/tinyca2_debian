@@ -71,6 +71,8 @@ sub new {
     'FINGERPRINTMD5'        => _("Fingerprint (MD5)"),
     'FINGERPRINTSHA1'       => _("Fingerprint (SHA1)"),
     'FINGERPRINTSHA256'     => _("Fingerprint (SHA256)"),
+    'FINGERPRINTSHA384'     => _("Fingerprint (SHA384)"),
+    'FINGERPRINTSHA512'     => _("Fingerprint (SHA512)"),
     _("Not set")                             => 'none',
     _("Ask User")                            => 'user',
     _("critical")                            => 'critical',

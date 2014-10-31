@@ -428,6 +428,10 @@ sub get_sign_req {
          $opts->{'digest'} = "sha1";
       } elsif ($opts->{'digest'} =~ /^sha256/) {
          $opts->{'digest'} = "sha256";
+      } elsif ($opts->{'digest'} =~ /^sha384/) {
+         $opts->{'digest'} = "sha384";
+      } elsif ($opts->{'digest'} =~ /^sha512/) {
+         $opts->{'digest'} = "sha512";
       } elsif ($opts->{'digest'} =~ /^ripemd160/) {
          $opts->{'digest'} = "ripemd160";
       } else {
