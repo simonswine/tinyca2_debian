@@ -674,6 +674,23 @@ sub parsecert {
       GUI::HELPERS::print_warning($t, $ext);
    }
 
+   $cmd = "$self->{'bin'} x509 -noout -fingerprint -sha256 -in $file";
+   $ext = "$cmd\n\n";
+   $pid = open3($wtfh, $rdfh, $rdfh, $cmd);
+   while(<$rdfh>){
+      $ext .= $_;
+      ($k, $v) = split(/=/);
+      $tmp->{'FINGERPRINTSHA256'} = $v if($k =~ /SHA256 Fingerprint/i);
+      chomp($tmp->{'FINGERPRINTSHA256'});
+   }
+   waitpid($pid, 0);
+   $ret = $? >> 8;
+
+   if($ret) {
+      $t = _("Error reading fingerprint from Certificate");
+      GUI::HELPERS::print_warning($t, $ext);
+   }
+
    # get subject in openssl format
    $cmd = "$self->{'bin'} x509 -noout -subject -in $file";
    $ext = "$cmd\n\n";

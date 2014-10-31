@@ -480,6 +480,7 @@ sub export_cert {
          $out = '';
          $out .= "Fingerprint (MD5): $opts->{'parsed'}->{'FINGERPRINTMD5'}\n";
          $out .= "Fingerprint (SHA1): $opts->{'parsed'}->{'FINGERPRINTSHA1'}\n\n";
+         $out .= "Fingerprint (SHA256): $opts->{'parsed'}->{'FINGERPRINTSHA256'}\n\n";
       } else {
          $out = '';
       }

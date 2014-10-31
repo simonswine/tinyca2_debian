@@ -90,6 +90,15 @@ sub display {
             'center', 0, 0);
       $self->{'x509textbox'}->pack_start($self->{'certfingerprintsha1'}, 
             0, 0, 0);
+
+      if(defined($self->{'certfingerprintsha256'})) {
+         $self->{'certfingerprintsha256'}->destroy();
+      } 
+      $self->{'certfingerprintsha256'} = GUI::HELPERS::create_label(
+            _("Fingerprint (SHA256)").": ".$parsed->{'FINGERPRINTSHA256'},
+            'center', 0, 0);
+      $self->{'x509textbox'}->pack_start($self->{'certfingerprintsha256'},
+            0, 0, 0);
    }
 
    if (($mode eq 'cert') || ($mode eq 'cacert')) {

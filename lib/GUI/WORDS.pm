@@ -70,6 +70,7 @@ sub new {
     'STATUS'                => _("Status"),
     'FINGERPRINTMD5'        => _("Fingerprint (MD5)"),
     'FINGERPRINTSHA1'       => _("Fingerprint (SHA1)"),
+    'FINGERPRINTSHA256'     => _("Fingerprint (SHA256)"),
     _("Not set")                             => 'none',
     _("Ask User")                            => 'user',
     _("critical")                            => 'critical',

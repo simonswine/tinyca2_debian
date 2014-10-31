@@ -29,14 +29,15 @@ my $true=1;
 # This hash maps our internal MD names to the displayed digest names.
 # Maybe it should live in a crypto-related file instead of a UI-related file?
 my %md_algorithms = (
-		     'md5' => 'MD5',
-		     'sha1' => 'SHA1',
-		     'md2' => 'MD2',
-		     'mdc2' => 'MDC2',
-		     'md4' => 'MD4',
+		     'md5' => 'ins.MD5',
+# duplicate	     'sha1' => 'SHA1',
+# n/a		     'md2' => 'MD2',
+# n/a		     'mdc2' => 'MDC2',
+		     'md4' => 'ins.MD4',
 		     'ripemd160' => 'RIPEMD-160',
 #		     'sha' => 'SHA',
 		     'sha1' => 'SHA-1',
+		     'sha256' => 'SHA256',
 		     );
 
 my %bit_lengths = (
@@ -1060,7 +1061,7 @@ sub create_detail_tree {
       $piter = $store->append($root);
       $store->set($piter, 0 => $t);
    
-      for my $l (qw(FINGERPRINTMD5 FINGERPRINTSHA1)) {
+      for my $l (qw(FINGERPRINTMD5 FINGERPRINTSHA1 FINGERPRINTSHA256)) {
          if(defined($parsed->{$l})) {
             $citer = $store->append($piter);
             $store->set($citer, 
