@@ -1062,6 +1062,7 @@ sub create_ca {
             'outdir'     => $self->{$ca}->{'dir'}."/newcerts/",
             'keyfile'    => $self->{$ca}->{'dir'}."/cacert.key",
             'cacertfile' => $self->{$ca}->{'dir'}."/cacert.pem",
+            'digest'     => $opts->{'digest'},
             'pass'       => $opts->{'passwd'},
             'days'       => $opts->{'days'},
             'parentpw'   => $opts->{'parentpw'},
