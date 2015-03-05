@@ -1,3 +1,9 @@
+tinyca (0.7.5-6) unstable; urgency=medium
+
+  * Adds support for SHA2 Closes: #759481. Thanks to Bill Thorsteinson
+
+ -- Christian Simon <simon@swine.de>  Thu, 05 Mar 2015 08:17:47 +0100
+
 tinyca (0.7.5-5) unstable; urgency=medium
 
   * Bug fix: "options set with radio buttons when creating a new
