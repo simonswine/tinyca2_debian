@@ -143,7 +143,12 @@ sub signreq {
    $cmd .= " -in \"$opts->{'reqfile'}\"";
    $cmd .= " -days $opts->{'days'}";
    $cmd .= " -preserveDN";
-   $cmd .= " -md $opts->{'digest'}" if($opts->{'digest'});
+   if($opts->{'digest'}){
+       if (lc $opts->{'digest'} eq 'sha1'){
+           $opts->{'digest'} = "sha256"
+       }
+       $cmd .= " -md $opts->{'digest'}"
+   };
 
    if(defined($opts->{'mode'}) && $opts->{'mode'} eq "sub") {
       $cmd .= " -keyfile \"$opts->{'keyfile'}\"";
